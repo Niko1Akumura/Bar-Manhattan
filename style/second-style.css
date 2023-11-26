@@ -1,0 +1,248 @@
+html {
+    background-color: #210E09;
+}
+
+body {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    margin-left: 312px;
+    margin-right: 312px;
+}
+
+header {
+    margin-top: 0.5vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-around;
+
+    padding: 0;
+}
+
+nav li {
+    margin: 15px;
+}
+
+nav a{
+    color: #ffff;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: 500;
+
+    position: relative;
+
+    transition: color .2s linear;
+}
+
+nav a:after {
+    content: "";
+    width: 100%;
+    height: 3px;
+
+    display: block;
+
+    opacity: 0;
+
+    background-color: #D5621D;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    
+    transition: opasity .2s linear;
+}
+
+nav a:hover {
+    color: #D5621D;
+}
+
+nav a:hover::after {
+    opacity: 1;
+}
+
+header button {
+    width: 188px;
+    height: 51px;
+
+    background-color: #210E09;
+
+    border: #D5621D solid 2px;
+    border-radius: 5px;
+    padding: 15px 30px 15px 30px;
+
+    transition: background-color .2s linear;
+}
+
+header button:hover {
+    background-color: #D5621D;
+}
+
+header button a{
+    color: #ffff;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* -----form----- */
+
+.myform {
+    margin-top: 150px;
+    margin-bottom: 350px;
+}
+
+.label-form, .inscription {
+    margin-bottom: 20px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.label-form span {
+    width: 260px;
+
+    padding: 10px 20px 7px 20px;
+
+    color: #000;
+    border-radius: 5px;
+    background-color: #ffff;
+    font-size: 16px;
+    font-family: 'Roboto';
+    font-weight: 700;
+}
+
+.inscription span {
+    color: #ffff;
+    font-size: 40px;
+    font-weight: 400;
+    font-family: 'Roboto';
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.form div {
+    margin-top: 10px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.form input, select {
+    width: 400px;
+
+    padding: 0;
+
+    color: #fff;
+    font-family: 'Montserrat';
+
+    background-color: transparent;
+    border: inherit;
+    border-bottom: 1px solid #D5621D;
+}
+
+input:focus {
+    outline: none;
+}
+
+select:focus {
+    background-color: #210E09;
+    color: #fff;
+}
+
+select option {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.select-container {
+    position: relative;
+}
+
+.number, .num-of-people {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+.error-submit {
+    margin-top: 25px;
+  }
+
+.center-es {
+    display: block;
+  }
+
+.error span {
+    font-family: 'Montserrat';
+    font-size: 14px;
+    color: #D5621D;
+    }
+
+  .submit {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .submit button {
+    background-color: #210E09;
+    padding: 10px 20px 7px 20px;
+
+    color: #ffff;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 5px;
+    border: 1px solid #D5621D;
+  }
+
+/* -----footer----- */
+.contact hr {
+    background-color: grey;
+    margin: 10px 40px;
+    height: 0.1px;
+}
+
+#footer {
+    background-color: grey;
+    margin: 85px 2px 20px 2px;
+    height: 0.001px;
+}
+
+.footer {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer span {
+    color: grey;
+    font-size: 14px;
+    stroke-width: 400;
+    font-family: 'Montserrat';
+}
