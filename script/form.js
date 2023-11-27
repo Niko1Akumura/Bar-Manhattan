@@ -1,5 +1,3 @@
-alert("Hello, Niko");
-
 let broner = document.getElementById('broner');
 broner.addEventListener("submit", checkForm);
 
