@@ -1,5 +1,3 @@
-alert("Bimbim;");
-
 let broner = document.getElementById('broner');
 broner.addEventListener("submit", checkForm);
 
