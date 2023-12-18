@@ -69,6 +69,8 @@ nav a:after {
     transition: opasity .2s linear;
 }
 
+
+
 nav a:hover {
     color: #D5621D;
 }
@@ -101,14 +103,22 @@ header button a{
     font-weight: 700;
 }
 
-/* -----form----- */
+/* check */
 
-.myform {
-    margin-top: 150px;
-    margin-bottom: 337px;
+#check {
+    margin-top: 100px;
 }
 
-.label-form, .inscription {
+#border {
+    margin: 50px 450px 75px 450px;
+    padding: 50px 50px 50px 50px;
+
+    border: solid 2px;
+    border-radius: 5px;
+    border-color: rgba(213, 98, 29, 1);
+}
+
+#label-form, #inscription {
     margin-bottom: 20px;
 
     display: flex;
@@ -116,7 +126,7 @@ header button a{
     align-items: center;
 }
 
-.label-form span {
+#label-form span {
     width: 260px;
 
     padding: 10px 20px 7px 20px;
@@ -127,107 +137,41 @@ header button a{
     font-size: 16px;
     font-family: 'Roboto';
     font-weight: 700;
+    text-align: center;
 }
 
-.inscription span {
+#inscription span {
     color: #ffff;
     font-size: 40px;
     font-weight: 400;
     font-family: 'Roboto';
 }
 
-.form {
-    width: 100%;
+.points {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
 }
 
-.form div {
-    margin-top: 10px;
-
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.form input, select {
-    width: 400px;
-
-    padding: 0;
-
-    color: #fff;
-    font-family: 'Montserrat';
-
-    background-color: transparent;
-    border: inherit;
-    border-bottom: 1px solid #D5621D;
-}
-
-input:focus {
-    outline: none;
-}
-
-select:focus {
-    background-color: #210E09;
-    color: #fff;
-}
-
-select option {
-    font-family: 'Montserrat', sans-serif;
-}
-
-.select-container {
-    position: relative;
-}
-
-.select {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-.error-submit {
-    margin-top: 25px;
-  }
-
-.center-es {
-    display: block;
-  }
-
-.error span {
-    font-family: 'Montserrat';
-    font-size: 14px;
-    color: #D5621D;
-    }
-
-  .submit {
-    width: 100%;
-
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  .submit button {
-    background-color: #210E09;
-    padding: 10px 20px 7px 20px;
+.points span {
+    width: 130px;
 
     color: #ffff;
     font-family: 'Montserrat';
     font-size: 18px;
     font-weight: 700;
-    border-radius: 5px;
-    border: 1px solid #D5621D;
-  }
-
-/* -----footer----- */
-.contact hr {
-    background-color: grey;
-    margin: 10px 40px;
-    height: 0.1px;
 }
 
+.points span:first-child {
+    margin-right: 20px;
+}
+
+.points span:last-child {
+    text-align: center;
+}
+
+/* footer */
 #footer {
     background-color: grey;
     margin: 85px 2px 20px 2px;
@@ -246,3 +190,4 @@ select option {
     stroke-width: 400;
     font-family: 'Montserrat';
 }
+

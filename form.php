@@ -1,3 +1,33 @@
+<?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "manhattan-bar";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    $stmt = $conn->prepare("INSERT INTO reservation (name, tables, quantity, id_menu, phone, datetime) VALUES (?, ?, ?, ?, ?, ?)");
+
+    $name = $_POST['name'] ?? '';
+    $tables = intval($_POST['tables'] ?? 0);
+    $quantity = intval($_POST['quantity'] ?? 0);
+    $menu = intval($_POST['menu'] ?? 0); // Предполагается, что id_menu - целое число
+    $phone = intval($_POST['phone'] ?? '');
+    $date = $_POST['date'] ?? '';
+
+    $stmt->bind_param("siiiis", $name, $tables, $quantity, $menu, $phone, $date);
+
+    if ($stmt->execute()) {
+        $stmt->close();
+        $conn->close();
+        header("Location: receipt.php");
+        exit();
+    } 
+
+    $stmt->close();
+    $conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="ua">
 <head>
@@ -75,84 +105,60 @@
             </div>
 
             <div class="form">
-            <form method="post" action="form.php" id="broner">
-    <div class="name">
-        <input id="name" type="text" name="name" placeholder="Ваше ім'я">
-    </div>
+                <form method="post" action="form.php" id="broner">
+                    <div class="name">
+                        <input id="name" type="text" name="name" placeholder="Ваше ім'я">
+                    </div>
 
-    <div class="number">
-        <select name="tables" id="number">
-            <option value="1">Столик №1</option>
-            <option value="2">Столик №2</option>
-            <option value="3">Столик №3</option>
-            <option value="4">Столик №4</option>
-            <option value="5">Столик №5</option>
-            <option value="6">Столик №6</option>
-        </select>
-    </div>
+                    <div class="select">
+                        <select name="tables" id="number">
+                            <option value="1">Столик №1</option>
+                            <option value="2">Столик №2</option>
+                            <option value="3">Столик №3</option>
+                            <option value="4">Столик №4</option>
+                            <option value="5">Столик №5</option>
+                            <option value="6">Столик №6</option>
+                        </select>
+                    </div>
 
-    <div class="num-of-people">
-        <div class="select-container">
-            <select name="quantity" id="numOfpeople">
-                <option value="1">Столик на одного</option>
-                <option value="2">Столик на двох</option>
-                <option value="3">Столик на трьох</option>
-                <option value="4">Столик на чотирьох</option>
-            </select>
-        </div>
-    </div>
+                    <div class="select">
+                            <select name="quantity" id="numOfpeople">
+                                <option value="1">Столик на одного</option>
+                                <option value="2">Столик на двох</option>
+                                <option value="3">Столик на трьох</option>
+                                <option value="4">Столик на чотирьох</option>
+                            </select>
+                    </div>
+                    <div class="select">
+                            <select name="menu" id="menu">
+                                <option value="1">Грузинське меню</option>
+                                <option value="2">Японське меню</option>
+                                <option value="3">Італьянське меню</option>
+                                <option value="4">Французьке меню</option>
+                            </select>
+                    </div>
 
-    <div class="phone">
-        <input id="tel" type="tel" name="phone" placeholder="0980000122">
-    </div>
+                    <div class="phone">
+                         <input id="tel" type="tel" name="phone" placeholder="0980000122">
+                    </div>
 
-    <div class="data-time">
-        <label for="datatime"></label>
-        <input id="datatime" type="datetime-local" name="date">
-    </div>
+                    <div class="data-time">
+                        <label for="datatime"></label>
+                        <input id="datatime" type="datetime-local" name="date">
+                    </div>
 
-    <div class="error-submit">
-        <div class="center-es">
-            <div class="error">
-                <span id="alarm"></span>
-            </div>
-            <div class="submit">
-                <button type="submit" name="submit">ЗАМОВИТИ</button>
-            </div>
-        </div>
-    </div>
-</form>
+                    <div class="error-submit">
+                        <div class="center-es">
+                            <div class="error">
+                                <span id="alarm"></span>
+                            </div>
+                            <div class="submit">
+                                <button type="submit" name="submit">ЗАМОВИТИ</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
 
-
-            <?php
-                // Шаг 1: Подключение к базе данных
-                $servername = "localhost"; // Замените на свой сервер
-                $username = "root"; // Замените на свои учетные данные
-                $password = ""; // Замените на свои учетные данные
-                $dbname = "manhattan-bar"; // Замените на имя вашей базы данных
-
-                $conn = mysqli_connect($servername, $username, $password, $dbname);
-
-                // Проверка соединения
-                if (!$conn) {
-                    die("Connection failed: " . mysqli_connect_error());
-                }
-
-                if (isset($_POST['submit'])) {
-                    $name = mysqli_real_escape_string($conn, $_POST['name']);
-                    $tables = mysqli_real_escape_string($conn, $_POST['tables']);
-                    $quantity = mysqli_real_escape_string($conn, $_POST['quantity']);
-                    $phone = mysqli_real_escape_string($conn, $_POST['phone']);
-                    $date = mysqli_real_escape_string($conn, $_POST['date']);
-
-                    // Шаг 2: Выполнение запроса к базе данных
-                    $sql = "INSERT INTO reservation(`name`, `tables`, `quantity`, `phone`, `date`) VALUES ('$name', '$tables', '$quantity', '$phone', '$date')";
-                    $result = mysqli_query($conn, $sql);
-                }
-
-                // Шаг 4: Закрытие соединения
-                mysqli_close($conn);
-            ?>
             </div>
 
         </div>
@@ -165,6 +171,6 @@
         </div>
 
     </div>
-    <script src="form.js"></script>
+    <script src="script/form.js"></script>
 </body>
 </html>
