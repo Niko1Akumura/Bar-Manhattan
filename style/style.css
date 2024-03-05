@@ -170,7 +170,7 @@ header button a{
 
     background-color: #d5631d00;
 
-    border-radius: 5px, 5px, 0px, 0px;
+    border-radius: 5px 5px 0px 0px;
     border: none;
     
     color: #ffff;
@@ -189,9 +189,18 @@ header button a{
     position: absolute;
     top: 0px;
     left: 208px;
-
-    background-color: #d5631d25;
 }
+
+.tab {
+    background-color: #ccc;
+}
+
+.tab.active {
+   
+    background-color: #471e14;
+
+}
+
 
 .wrapper {
     margin-top: 40px;
@@ -200,6 +209,11 @@ header button a{
     grid-template-columns: 160px 160px;
     grid-row-gap: 1em;
     grid-column-gap: 1em;
+}
+
+.wrapper img {
+    width: 160px;
+    height: 200px;
 }
 
 .kitchen {
