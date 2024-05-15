@@ -15,7 +15,13 @@
     <link rel="icon" type="image/x-icon" href="img/logo and fav.png">
 
     <link rel="stylesheet" href="style/style.css">
-    <script src="script.js"></script>
+    <script src="script/jquery-3.7.1.js"></script>
+    <script src="script/jquery.simpleGallery.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.bigest-banner').simpleGallery();
+        });
+    </script>
 </head>
 <body>
     <div class="container">
@@ -35,7 +41,7 @@
                     </li>
 
                     <li>
-                        <a href="">Афіша</a>
+                        <a href="./view/poster.html">Афіша</a>
                     </li>
 
                     <li>
@@ -51,21 +57,19 @@
                     </li>
 
                     <li>
-                        <a href="admin.php">Для адміністрації</a>
+                        <a href="">Для адміністрації</a>
                     </li>
 
                 </ul>
             </nav>
-
-           <button>
-            <a href="form.php">БРОНЮВАННЯ</a>
-           </button>
                 
         </header>
 
         <div class="main-banner">
             <div class="bigest-banner">
                 <img src="img/Rectangle 30.png" alt="Bigest-banner">
+                <img src="img/banner%202.jpg">
+                <img src="img/banner%203.jpg">
 
                 <div class="banner-text">
                     TRUE.FONTANKA.<br>UNDEGROUND.
@@ -77,8 +81,8 @@
             </div>
 
             <div class="js-banner">
-                <button id="nearestButton">НАЙБЛИЖЧІ</button>
-                <button id="soonButton">СКОРО</button>
+                <button id="nearestButton" class="tab">НАЙБЛИЖЧІ</button>
+                <button id="soonButton" class="tab">СКОРО</button>
 
                 <div class="wrapper">
                     <img src="img/Rectangle 32.png" alt="">
@@ -88,281 +92,6 @@
                 </div>
 
             </div>
-        </div>
-
-        <div class="kitchen">
-
-            <div class="heading">
-                <div class="lead">
-                    <span>
-                        TOP “MANHATTAN” MENU
-                    </span>
-                </div>
-                
-                <div class="inscription">
-                    <span>
-                        Кухня
-                    </span>
-                </div>
-            </div>
-
-            <div class="indents">
-                <div class="menu">
-                    <div class="dish">
-                        <img src="img/Rectangle 36.png" alt="">
-
-                        <div class="label">
-                            
-                            <div class="name-price">
-
-                                <div class="name">
-                                    <span>
-                                        AMET DONEC.
-                                    </span>
-                                </div>
-
-                                <div class="price">
-                                        250 ₴
-                                </div>
-
-                            </div>
-
-                            <div class="weight">
-                                <span>
-                                    300 гр
-                                </span>
-                            </div>
-
-                            <div class="desc">
-                                <span>
-                                    Integer dolor et sed tempus non. Adipiscing viverra in viverra quisque pretium. Commodo.
-                                </span>
-                            </div>
-
-
-                        </div>
-
-                    </div>
-                    <div class="dish">
-                        <img src="img/Rectangle 36(1).png" alt="">
-
-                        <div class="label">
-                            <div class="name-price">
-
-                                <div class="name">
-                                    <span>
-                                        AMET DONEC.
-                                    </span>
-                                </div>
-
-                                <div class="price">
-                                        250 ₴
-                                </div>
-
-                            </div>
-
-                            <div class="weight">
-                                200 гр
-                            </div>
-
-                            <div class="desc">
-                                <span>
-                                    Leo in arcu in gravida vivamus scelerisque non. Euismod nec amet amet egestas nisl iaculis.
-                                </span>
-                               
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="dish">
-                        <img src="img/Rectangle 36(2).png" alt="">
-
-                        <div class="label">
-                            <div class="name-price">
-
-                                <div class="name">
-                                    <span>
-                                        AMET DONEC.
-                                    </span>
-                                </div>
-
-                                <div class="price">
-                                        250 ₴
-                                </div>
-
-                            </div>
-
-                            <div class="weight">
-                                500 гр
-                            </div>
-
-                            <div class="desc">
-                                <span>
-                                    Duis quisque tristique nulla cursus justo, etiam viverra nulla cras. Consectetur eget augue.
-                                </span>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="dish">
-                        <img src="img/Rectangle 36(3).png" alt="">
-
-                        <div class="label">
-                            <div class="name-price">
-
-                                <div class="name">
-                                    <span>
-                                        AMET DONEC.
-                                    </span>
-                                </div>
-
-                                <div class="price">
-                                        250 ₴
-                                </div>
-
-                            </div>
-
-                            <div class="weight">
-                                500 гр
-                            </div>
-
-                            <div class="desc">
-                                <span>
-                                    Elit imperdiet faucibus euismod tortor risus volutpat molestie morbi sed. Porta ac eu.
-                                </span>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="dish">
-                        <img src="img/Rectangle 36(4).png" alt="">
-
-                        <div class="label">
-                            <div class="name-price">
-
-                                <div class="name">
-                                    <span>
-                                        AMET DONEC.
-                                    </span>
-                                </div>
-
-                                <div class="price">
-                                        250 ₴
-                                </div>
-
-                            </div>
-
-                            <div class="weight">
-                                100гр
-                            </div>
-
-                            <div class="desc">
-                                <span>
-                                    In cras pharetra aliquet laoreet. Lectus nisi ante felis quam pharetra in maecenas ut felis. 
-                                </span>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="dish">
-                        <img src="img/Rectangle 36(5).png" alt="">
-
-                        <div class="label">
-                            <div class="name-price">
-
-                                <div class="name">
-                                    <span>
-                                        AMET DONEC.
-                                    </span>
-                                </div>
-
-                                <div class="price">
-                                        250 ₴
-                                </div>
-
-                            </div>
-
-                            <div class="weight">
-                                400 гр
-                            </div>
-
-                            <div class="desc">
-                                <span>
-                                    Pharetra morbi purus hendrerit risus vel consequat nunc, sed. Pharetra nulla imperdiet.
-                                </span>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="dish">
-                        <img src="img/Rectangle 36(6).png" alt="">
-
-                        <div class="label">
-                            <div class="name-price">
-
-                                <div class="name">
-                                    <span>
-                                        AMET DONEC.
-                                    </span>
-                                </div>
-
-                                <div class="price">
-                                        250 ₴
-                                </div>
-
-                            </div>
-
-                            <div class="weight">
-                                300 гр
-                            </div>
-
-                            <div class="desc">
-                                <span>
-                                    In mauris, elit nisl sed. Nulla accumsan vestibulum sed velit sagittis quis accumsan.
-                                </span>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="dish">
-                        <img src="img/Rectangle 36(7).png" alt="">
-
-                        <div class="label">
-                            <div class="name-price">
-
-                                <div class="name">
-                                    <span>
-                                        AMET DONEC.
-                                    </span>
-                                </div>
-
-                                <div class="price">
-                                        250 ₴
-                                </div>
-
-                            </div>
-
-                            <div class="weight">
-                                200 гр
-                            </div>
-
-                            <div class="desc">
-                                <span>
-                                    Placerat id auctor nunc id vel vel curabitur. Urna fames maecenas leo elit diam nibh elit.
-                                </span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="all-menu-bth">
-                <button>
-                    <a href="">ВСЕ МЕНЮ</a>
-                </button>
-            </div>
-
         </div>
 
         <div class="events-tourists">

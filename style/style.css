@@ -25,7 +25,7 @@ header {
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 nav ul{
@@ -79,30 +79,6 @@ nav a:hover::after {
     opacity: 1;
 }
 
-header button {
-    width: 188px;
-    height: 51px;
-
-    background-color: #210E09;
-
-    border: #D5621D solid 2px;
-    border-radius: 5px;
-    padding: 15px 30px 15px 30px;
-
-    transition: background-color .2s linear;
-}
-
-header button:hover {
-    background-color: #D5621D;
-}
-
-header button a{
-    color: #ffff;
-    font-family: 'Montserrat';
-    font-size: 14px;
-    font-weight: 700;
-}
-
 .main-banner {
     margin-top: 37px;
     display: flex;
@@ -117,6 +93,22 @@ header button a{
     position: relative;
 
     filter: brightness(75%);
+}
+
+.bigest-banner .gallery-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.bigest-banner .gallery-buttons button{
+    background-color: #fff;
+    padding: 5px;
+    border: #fff 1px solid;
+    border-radius: 360px;
+}
+
+.bigest-banner .gallery-buttons button:not(:last-child) {
+    margin-right: 10px;
 }
 
 .banner-text {
@@ -170,7 +162,7 @@ header button a{
 
     background-color: #d5631d00;
 
-    border-radius: 5px, 5px, 0px, 0px;
+    border-radius: 5px 5px 0px 0px;
     border: none;
     
     color: #ffff;
@@ -189,9 +181,18 @@ header button a{
     position: absolute;
     top: 0px;
     left: 208px;
-
-    background-color: #d5631d25;
 }
+
+.tab {
+    background-color: #ccc;
+}
+
+.tab.active {
+   
+    background-color: #471e14;
+
+}
+
 
 .wrapper {
     margin-top: 40px;
@@ -200,6 +201,11 @@ header button a{
     grid-template-columns: 160px 160px;
     grid-row-gap: 1em;
     grid-column-gap: 1em;
+}
+
+.wrapper img {
+    width: 160px;
+    height: 200px;
 }
 
 .kitchen {
