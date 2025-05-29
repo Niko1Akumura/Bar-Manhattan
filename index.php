@@ -1,3 +1,24 @@
+<?php
+
+    require_once __DIR__ . '/backend/proxy/AdvertisingProxy.php';
+    require_once __DIR__ . '/backend/config/DBconnect.php';
+
+    use backend\config\DBconnect;
+    use backend\proxy\AdvertisingProxy;
+    use backend\config\Pagination;
+
+    $db = DBconnect::getInstance()->getConnection();
+    $proxy = new AdvertisingProxy($db);
+
+    $showAdvertising = isset($_GET['advertising']) ? $_GET['advertising'] : '0';
+
+    if($showAdvertising == 0) {
+        $advertisingData = $proxy->getLazyAdvertising();
+    } elseif ($showAdvertising == 1) {
+        $advertisingData = $proxy ->getAdvertising();
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="ua">
 <head>
@@ -27,7 +48,7 @@
     <div class="container">
         <header>
             <div class="logo">
-                <a href="index.html">
+                <a href="index.php">
                     <img src="img/logo and fav.png" alt="">
                 </a>
             </div>
@@ -37,11 +58,11 @@
 
 
                     <li>
-                        <a href="">Меню</a>
+                        <a href="view/comments.php">Відгуки</a>
                     </li>
 
                     <li>
-                        <a href="./view/poster.html">Афіша</a>
+                        <a href="./view/poster.php">Афіша</a>
                     </li>
 
                     <li>
@@ -49,7 +70,7 @@
                     </li>
 
                     <li>
-                        <a href="">Галерея</a>
+                        <a href="view/gallery.php">Галерея</a>
                     </li>
 
                     <li>
@@ -57,7 +78,7 @@
                     </li>
 
                     <li>
-                        <a href="">Для адміністрації</a>
+                        <a href="view/foradmin.html">Для адміністрації</a>
                     </li>
 
                 </ul>
@@ -342,6 +363,42 @@ Eu sodales netus faucibus interdum interdum platea massa egestas. Facilisis done
                 <div class="map">
                     <img src="img/map.png" alt="">
                 </div>
+            </div>
+        </div>
+
+        <div class="advertising-area">
+            <div class="contact-header">
+
+                <div class="contact-frame">
+                    <button>
+                        <span>TOP "MANHATTAN"
+                            ADVERTISING</span>
+                    </button>
+
+                </div>
+
+                <div class="contact-label">
+                    <span>РЕКЛАМА</span>
+                </div>
+            </div>
+            <div class="advertising-form">
+                <form name="advertisingForm" class="advertisingForm">
+                    <select name="advertising">
+                        <option value="0" <?= $showAdvertising == '0' ? 'selected' : '' ?>>Приховати</option>
+                        <option value="1" <?= $showAdvertising == '1' ? 'selected' : '' ?>>Показати</option>
+                    </select>
+                    <button type="submit">ОК</button>
+                </form>
+            </div>
+            <div class="advertising-banners">
+                <?php
+                    foreach ($advertisingData as $advertising) {
+                        echo '<div>';
+                        echo '<img src="data:image/jpeg;base64,' . base64_encode($advertising['advertising_img']) . '" alt="Advertisement Image">';
+                        echo '<p>' . htmlspecialchars($advertising['advertising_text']) . '</p>';
+                        echo '</div>';
+                }
+                ?>
             </div>
         </div>
 

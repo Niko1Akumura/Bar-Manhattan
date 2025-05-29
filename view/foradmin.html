@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>Адміністрування</title>
+    <!-- Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Oswald:wght@600&display=swap" rel="stylesheet">
+    <!-- Robot -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../img/logo and fav.png">
+    <script src="../script/jquery-3.7.1.js"></script>
+    <script src="../script/jqueryDataGrid.js"></script>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="logo">
+            <a href="../index.php">
+                <img src="../img/logo and fav.png" alt="">
+            </a>
+        </div>
+
+        <nav>
+            <ul>
+
+                <li>
+                    <a href="../index.php">Головна</a>
+                </li>
+
+                <li>
+                    <a href="./poster.php">Афіша</a>
+                </li>
+
+                <li>
+                    <a href="">Співпраця</a>
+                </li>
+
+                <li>
+                    <a href="gallery.php">Галерея</a>
+                </li>
+
+                <li>
+                    <a href="">Новини</a>
+                </li>
+
+                <li>
+                    <a href="">Для адміністрації</a>
+                </li>
+
+            </ul>
+        </nav>
+
+    </header>
+
+    <div class="jdq">
+        <div class="dataForm">
+            <form id="postGroup">
+                <input type="text" id="imgGroup" placeholder="Зображення">
+                <input type="text" id="nameGroup" placeholder="Назва групи">
+                <select id="genreGroup">
+                    <option value="1">Поп-рок</option>
+                    <option value="2">Рок</option>
+                    <option value="3">Хеві-метал</option>
+                    <option value="4">Метал</option>
+                    <option value="7">Альтернативний рок</option>
+                    <option value="8">Данс-поп</option>
+                    <option value="9">Хаус-музика</option>
+                    <option value="10">Альт-поп</option>
+                </select>
+                <select id="ratingGroup">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <textarea id="desckGroup" form="postGroup" placeholder="Imagine Dragons..."></textarea>
+                <button type="submit">SUBMIT</button>
+                <div id="error"></div>
+            </form>
+        </div>
+        <div id="dataTable"></div>
+        <div id="dataPagination"></div>
+    </div>
+
+    <hr id="footer">
+
+    <div class="footer">
+        <span>DUET© 2023. Всі права захищені</span>
+        <span>Розроблено: @akumuraniko</span>
+    </div>
+
+</div>
+</body>
+</html>
